@@ -1,0 +1,14 @@
+Source: canopen-toolbox
+Section: misc
+Priority: extra
+Maintainer: Stefan May <stefan.may@desy.de>
+Build-Depends: debhelper (>= 7), libncurses5-dev
+Standards-Version: 3.7.2
+
+Package: canopen-toolbox
+Architecture: any
+Depends: ${shlibs:Depends}, libncurses5
+Conflicts: canopentool
+Replaces: canopentool
+Description: CANopen debug tool
+ This is a tool for debugging CANopen.
