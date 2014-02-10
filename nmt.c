@@ -36,14 +36,14 @@
 #include "canopentool.h"
 
 void nmt(char* can_interface, nmt_command_specifier_t command_specifier, uint8_t node_id) {
-	struct can_frame frame;
-	bzero(&frame, sizeof(frame));
-	frame.can_id = 0;
-	frame.can_dlc = 2;
-	frame.data[0] = command_specifier;
-	frame.data[1] = node_id;
+    struct can_frame frame;
+    bzero(&frame, sizeof(frame));
+    frame.can_id = 0;
+    frame.can_dlc = 2;
+    frame.data[0] = command_specifier;
+    frame.data[1] = node_id;
 
-	socketcan_open(can_interface);
-	socketcan_write(frame);
-	socketcan_close();
+    socketcan_open(can_interface);
+    socketcan_write(frame);
+    socketcan_close();
 }
